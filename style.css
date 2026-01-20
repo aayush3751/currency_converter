@@ -1,0 +1,37 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+
+body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height: 100vh;
+    background-color: rgb(189, 161, 242);
+}
+.container{
+    background-color:aliceblue;
+    padding:2rem;
+    border-radius:5%;
+    width:45vh;
+    min-height:50vh;
+}
+form{
+  margin:2rem 0 1rem 0;
+}
+form input ,select, button{
+    width:100%;
+    margin:0.75rem 0 0.752rem 0;
+    border:none;
+    border-radius:0.25rem;
+    font-size:1rem;
+    border:1px solid black;
+    
+}
+form input{
+    padding-left:1rem;
+    height:2rem;
+   
+}
