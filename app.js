@@ -1,8 +1,12 @@
-const Base_Url="https://latest.currency-api.pages.dev/v1/currencies/eur.json";
+const BaseUrl="https://www.amdoren.com/api/currency.php?api_key=MHYgNYAEjsyprSW5Xpwr6bdU3crHU6&";
 
 const dropdowns=document.querySelectorAll(".dropdown select");
+
+const btn=document.querySelector("form button")
 let flags=document.querySelectorAll("dropdown img");
 
+const fromCurr=document.querySelector(".FROM select");
+const toCurr=document.querySelector(".TO select");
 // for(code in countryList){console.log(code,countryList[code]);}
 
 for(select of dropdowns)
@@ -35,3 +39,17 @@ updateFlag= (element) =>
     let img=element.parentElement.querySelector("img");
     img.src=newImg;
 };
+btn.addEventListener("click" ,async (evt) =>{
+    evt.preventDefault();
+    let amount=document.querySelector(".Amount input");
+    let amt=amount.value;
+    if(amt==="" || amt<0){amount.value =1;}
+
+    
+const url=`${BaseUrl}from=${fromCurr.value}&to=${toCurr.value}`;
+let response =await fetch(url);
+let data =await response.json();
+// let val=data[amount]
+console.log(data);
+// console.log(val);
+});
