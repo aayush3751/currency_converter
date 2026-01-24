@@ -1,5 +1,5 @@
-const BaseUrl="https://www.amdoren.com/api/currency.php?api_key=MHYgNYAEjsyprSW5Xpwr6bdU3crHU6&";
-
+// const BaseUrl="https://free.ratesdb.com/v1/rates?";
+ const BASE_URL="https://v6.exchangerate-api.com/v6/b67e1cfe54afbad38db94b2e/latest/";
 const dropdowns=document.querySelectorAll(".dropdown select");
 
 const btn=document.querySelector("form button")
@@ -7,6 +7,7 @@ let flags=document.querySelectorAll("dropdown img");
 
 const fromCurr=document.querySelector(".FROM select");
 const toCurr=document.querySelector(".TO select");
+const msg=document.querySelector(".msg p")
 // for(code in countryList){console.log(code,countryList[code]);}
 
 for(select of dropdowns)
@@ -43,13 +44,21 @@ btn.addEventListener("click" ,async (evt) =>{
     evt.preventDefault();
     let amount=document.querySelector(".Amount input");
     let amt=amount.value;
-    if(amt==="" || amt<0){amount.value =1;}
+    if(amt==="" || amt<0){
+        amount=1;
+        amount.value =1;}
 
     
-const url=`${BaseUrl}from=${fromCurr.value}&to=${toCurr.value}`;
+const url=`${BASE_URL}${fromCurr.value}`;
 let response =await fetch(url);
+console.log(response);
 let data =await response.json();
-// let val=data[amount]
+let rate=data.conversion_rates;
 console.log(data);
-// console.log(val);
+let to=toCurr.value;
+ console.log(rate[to]);
+
+let finalAmount=rate[to]*amt;
+msg.innerText=`${amt} ${fromCurr.value}=${finalAmount} ${toCurr.value}`
 });
+
