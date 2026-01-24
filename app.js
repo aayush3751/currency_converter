@@ -1,4 +1,4 @@
-// const BaseUrl="https://free.ratesdb.com/v1/rates?";
+
  const BASE_URL="https://v6.exchangerate-api.com/v6/b67e1cfe54afbad38db94b2e/latest/";
 const dropdowns=document.querySelectorAll(".dropdown select");
 
@@ -8,7 +8,7 @@ let flags=document.querySelectorAll("dropdown img");
 const fromCurr=document.querySelector(".FROM select");
 const toCurr=document.querySelector(".TO select");
 const msg=document.querySelector(".msg p")
-// for(code in countryList){console.log(code,countryList[code]);}
+
 
 for(select of dropdowns)
 {
