@@ -9,10 +9,10 @@ body{
     align-items:center;
     justify-content:center;
     min-height: 100vh;
-    background-color: rgb(189, 161, 242);
+    background-color:#C2CFB2;
 }
 .container{
-    background-color:aliceblue;
+    background-color:#8DB580;
     padding:2rem;
     border-radius:5%;
     width:45vh;
@@ -54,7 +54,7 @@ padding:1rem;
 .msg{
     margin:2rem 0 2rem 0;
     font-size:1.5rem;
-    color:rgb(239, 116, 136);
+    color:#4B4A67;
 }
 .msg button{
     margin-top :2rem;
