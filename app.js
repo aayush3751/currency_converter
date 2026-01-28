@@ -8,8 +8,23 @@ let flags=document.querySelectorAll("dropdown img");
 const fromCurr=document.querySelector(".FROM select");
 const toCurr=document.querySelector(".TO select");
 const msg=document.querySelector(".msg p")
+const butn=document.querySelector("#themeToggle");
 
-
+let md="light";
+const tog =() =>{
+    if(md=="light")
+    {
+        document.body.classList.add("dark");
+        butn.innerHTML=`<i class="fa-regular fa-sun"></i>`;
+        md="dark";
+    }
+    else{
+        document.body.classList.remove("dark");
+        butn.innerHTML=`<i class="fa-regular fa-moon"></i>`;
+        md="light";
+    }
+}
+butn.addEventListener("click",tog);
 for(select of dropdowns)
 {
     for(CurrCode in countryList)
